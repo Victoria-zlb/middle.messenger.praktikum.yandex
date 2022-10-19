@@ -1,0 +1,96 @@
+<div class={{styles.container}}>
+    <div class={{styles.chatList}}>
+        <div class={{styles.profile}}>
+            <div class={{styles.avatar}}>
+                <img src="" />
+            </div>
+            <div class={{styles.main}}>
+                <h3 class={{styles.name}}>
+                    Клюквин Дмитрий
+                </h3>
+                <p class={{styles.description}}>
+                    @rencover
+                </p>
+            </div>
+            <div class={{styles.profileInfo}}>
+                <img src="{{iconMore}}" />
+            </div>
+        </div>
+        <input 
+            class={{styles.input}} 
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Поиск"
+        />
+        <div class={{styles.add}}>
+            <div class={{styles.addChat}}>
+                <img src="{{iconAdd}}" />
+            </div>
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.chat}}>
+            {{> userChat id='chat_2' avatar="" userName="Асафьев Стас" description="Привет Котик!.." time="10:41" styles=chatStyles }}
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.chat}}>
+            {{> userChat id='chat_3' avatar="" userName="Лебедев Арсений" description="Фига ты нарисовал!.." time="10:20" styles=chatStyles }}
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.chat}}>
+            {{> userChat id='chat_2' avatar="" userName="Новости Верхний.." description="Очередь на пропуск.." time="09:00" styles=chatStyles }}
+        </div>
+        <div class={{styles.horizontalLine}}></div>        
+    </div>
+    <div class={{styles.chatPage}}>
+        <div class={{styles.profileChat}}>
+            <div class={{styles.avatar}}>
+                <img src="" />
+                <div class={{styles.edit}}>
+                    <img src="{{iconEdit}}" />
+                </div>
+            </div>
+            <div class={{styles.main}}>
+                <h3 class={{styles.name}}>
+                    Асафьев Стас
+                </h3>
+                <p class={{styles.description}}>
+                    @asafev
+                </p>
+            </div>
+            <div class={{styles.profileInfo}}>
+                <img src="{{iconMore}}" />
+            </div>
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.mainChat}}>
+            <div class={{styles.messageLeft}}>
+                <div class={{styles.chatMessageLeft}}>
+                    текст из сообщения, тут очень много текста, тут очень многотекста, тут очень много текста, тут очень много текста, туточень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста, тут очень много текста,тут очень много текста, тут очень много текста, тут очень много текста!!!
+                </div>
+            </div>
+            <div class={{styles.messageRight}}>
+                <div class={{styles.chatMessageRight}}>
+                    Понятно, круто!
+                </div>
+            </div>
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.userMessage}}>
+            <div class={{styles.userMessageIcon}}>
+                <img src="{{iconAttachment}}" />
+            </div>
+            <input 
+                class={{styles.userMessageInput}}
+                type="text"
+                id="message"
+                name="message"
+                placeholder="Сообщение..."
+            >
+            </input>
+            <div class={{styles.userMessageIcon}}>
+                <img src="{{iconSend}}" />
+            </div>
+        </div>
+    </div>
+</div>

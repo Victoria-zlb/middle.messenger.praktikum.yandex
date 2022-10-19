@@ -1,0 +1,48 @@
+<div class={{styles.container}}>
+    <div class={{styles.chatList}}>
+        <div class={{styles.profile}}>
+            <div class={{styles.avatar}}>
+                <img src="" />
+            </div>
+            <div class={{styles.main}}>
+                <h3 class={{styles.name}}>
+                    Клюквин Дмитрий
+                </h3>
+                <p class={{styles.description}}>
+                    @rencover
+                </p>
+            </div>
+            <div class={{styles.profileInfo}}>
+                <img src="{{iconMore}}" />
+            </div>
+        </div>
+        <input 
+            class={{styles.input}} 
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Поиск"
+        />
+        <div class={{styles.add}}>
+            <div class={{styles.addChat}}>
+                <img src="{{iconAdd}}" />
+            </div>
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.chat}}>
+            {{> userChat id='chat_2' avatar="" userName="Асафьев Стас" description="Привет Котик!.." time="10:41" styles=chatStyles }}
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.chat}}>
+            {{> userChat id='chat_3' avatar="" userName="Лебедев Арсений" description="Фига ты нарисовал!.." time="10:20" styles=chatStyles }}
+        </div>
+        <div class={{styles.horizontalLine}}></div>
+        <div class={{styles.chat}}>
+            {{> userChat id='chat_2' avatar="" userName="Новости Верхний Ларс" description="Очередь на пропуск.." time="09:00" styles=chatStyles }}
+        </div>
+        <div class={{styles.horizontalLine}}></div>        
+    </div>
+    <div>
+
+    </div>
+</div>

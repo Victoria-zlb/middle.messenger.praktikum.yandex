@@ -1,0 +1,19 @@
+<div class={{styles.container}}>
+    <div class={{styles.box}}>
+        <h1 class={{styles.title}}>Вход</h1>
+        <form class={{styles.colomn}}>
+            <label>
+                <p class={{styles.text}}>Логин:</p>
+                <input type="text" name="login" size="40">
+            </label>
+            <label>
+                <p class={{styles.text}}>Пароль:</p>
+                <input type="text" name="password" size="40">
+            </label>
+        </form>
+        <div class={{styles.colomn}}>
+            {{> button id='authorizationBtn' value='Войти' }}
+            <div class={{styles.authorization}}>Впервые?</div>
+        </div>
+    </div>
+</div>

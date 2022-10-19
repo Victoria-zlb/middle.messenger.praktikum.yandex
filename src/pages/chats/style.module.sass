@@ -1,0 +1,171 @@
+@import '../../consts/base'
+
+.container 
+    height: 100vh
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+.chatList 
+    border-right: 1px solid #7250FF
+    width: 412px
+    padding: 20 32px
+
+.horizontalLine
+    background-color: #6C48FF
+    height: 1px
+
+.chat
+    padding: 25px 0
+
+.avatar
+    border-radius: 100%
+    background-color: grey
+    height: 46px
+    width: 46px
+    box-sizing: border-box
+    position: relative
+
+.name
+    margin: 0
+    font-family: 'Coda', sans-serif
+    font-size: 16px
+    color: #fff
+    font-style: normal
+    
+.main
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding-left: 25px
+    width: calc(100% - 50px - 46px)
+    box-sizing: border-box
+    height: 46px
+
+.description
+    color: #7250FF
+    font-family: 'Coda', sans-serif
+    font-weight: 400
+    font-size: 16px
+
+.profile
+    display: flex
+
+.input
+    width: calc(100% - 30px)
+    margin: 25px 0
+    background: #D9D9D9
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 4px
+    height: 40px
+    padding: 0 15px
+    outline: 0
+    font-family: 'KyivType Sans', sans-serif
+
+.addChat
+    width: 50px
+    height: 50px
+    background: rgba(217, 217, 217, 0.2)
+    border: 1px solid #6C48FF
+    box-shadow: 0px 0px 5px 1px #6C48FF
+    border-radius: 100%
+    cursor: pointer
+
+.add
+    display: flex
+    justify-content: center
+    padding-bottom: 25px
+
+.profileInfo
+    rotate: 90deg
+    width: 40px
+    cursor: pointer
+    box-sizing: border-box
+
+    & > img
+        width: 100%
+
+.chatPage
+    width: 100%
+    padding: 25px
+
+.profileChat
+    display: flex
+    padding-bottom: 25px
+    height: 50px
+
+.chatMessageLeft
+    margin-top: 25px
+    background: linear-gradient(112.71deg, #033B8F 0%, #D209E3 100.51%)
+    border: 1px solid #6C48FF
+    box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, 0.25)
+    border-radius: 0px 20px 20px 20px
+    box-sizing: content-box
+    max-width: 70%
+    padding: 15px
+    color: #fff
+    font-family: 'Coda', sans-serif
+
+.chatMessageRight
+    float: right
+    margin-top: 25px
+    background: linear-gradient(271.42deg, #033B8F -2.32%, #D209E3 100%)
+    border: 1px solid #6C48FF
+    box-shadow: inset 0px 4px 10px 5px rgba(0, 0, 0, 0.25)
+    border-radius: 20px 20px 0px 20px
+    box-sizing: content-box
+    max-width: 70%
+    padding: 15px
+    color: #fff
+    font-family: 'Coda', sans-serif
+
+.messageRight
+    display: flex
+    justify-content: flex-end
+
+.messageLeft
+    display: flex
+    justify-content: flex-start
+
+.mainChat
+    padding: 0 0 25px 0
+    height: calc( 100% - 50px - 100px - 2px - 25px )
+
+.userMessage
+    padding: 25px 0
+    display: flex
+    justify-content: space-between
+    height: 50px
+
+.userMessageIcon
+    box-sizing: border-box
+    width: 50px
+    cursor: pointer
+
+    & > img
+        width: 100%
+
+.userMessageInput
+    padding: 15px
+    box-sizing: border-box
+    margin: 0 15px
+    height: 50px
+    width: 100%
+    background: #D9D9D9
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 4px
+    outline: 0
+
+.edit
+    position: absolute
+    width: 20px
+    height: 20px
+    top: 0
+    right: 0
+    background: rgba(143, 142, 142, 0.75)
+    border: 1px solid #4A389B
+    box-shadow: 0px 0px 4px 1px #352B67
+    border-radius: 100%
+    display: flex
+    justify-content: center
+    align-items: center
