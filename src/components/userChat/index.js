@@ -5,6 +5,6 @@ import './style.module.sass';
 
 Handlebars.registerPartial('userChat', tpl);
 
-export default (id, avatar, userName, description, time, styles) => {
-	return tpl({id, avatar, userName, description, time, styles});
+export default (content) => {
+	return tpl(content);
 }

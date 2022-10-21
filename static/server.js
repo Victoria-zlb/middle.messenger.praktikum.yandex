@@ -1,13 +1,18 @@
 const express = require('express');
 
+const path = require('path');
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static('./'));
+app.use(express.static(path.join(__dirname, '../dist')));
+app.get('/', (req, res) => {
+    res.status(200);
+    res.sendFile(path.join(__dirname, '../dist/index.html'))
+})
 
-app.listen(PORT, function () {
-  console.log(`Example app listening on port ${PORT}!`);
-}); 
-app.use(express.static('./static'));
-app.use(express.static('./src/pages/authorization/'));
-app.use(express.static('./src/pages/registration/'));
+app.listen(PORT, () => {
+    console.log(
+        `Сервер на:
+        http://localhost:${PORT}/`
+    );
+});

@@ -24,7 +24,7 @@
     justify-content: center
 
 .arrow
-    background: #3300FF
+    background: $main-back-color
     box-shadow: 0px 0px 5px 1px #2E2756
     border-radius: 100%
     display: flex
@@ -48,10 +48,15 @@
     background-color: gray
     border-radius: 100%
     position: relative
+    display: flex
+    justify-content: center
+
+    & > img
+        width: 80%
 
 .name
     color: #fff
-    font-family: 'Coda', sans-serif
+    font-family: $second-font
 
 .info
     margin-top: 25px
@@ -64,13 +69,13 @@
     display: flex
     justify-content: space-between
     width: 600
-    border-bottom: 1px dashed #3300FF
+    border-bottom: 1px dashed $main-back-color
     padding: 0 15px
     margin-top: 20px
 
     & > p
         color: #fff
-        font-family: 'Coda', sans-serif
+        font-family: $second-font
 
 .edit
     position: absolute

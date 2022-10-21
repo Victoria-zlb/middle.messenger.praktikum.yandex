@@ -1,3 +1,5 @@
+@import '../../consts/base'
+
 .cont
     display: flex
     align-items: center
@@ -10,9 +12,12 @@
     width: 46px
     box-sizing: border-box
 
+    & > img
+        width: 100%
+
 .name
     margin: 0
-    font-family: 'Coda', sans-serif
+    font-family: $second-font
     font-size: 16px
     color: #fff
     font-style: normal
@@ -27,13 +32,13 @@
 
 .description
     color: #7250FF
-    font-family: 'Coda', sans-serif
+    font-family: $second-font
     font-weight: 400
     font-size: 16px
 
 .time
     float: right
-    font-family: 'Coda', sans-serif
+    font-family: $second-font
     color: #fff
     width: 50px
     box-sizing: border-box

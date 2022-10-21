@@ -8,6 +8,7 @@ import iconMore from '../../../static/icon/icon_more.png';
 import iconSend from '../../../static/icon/icon_send.png';
 import iconAttachment from '../../../static/icon/icon_attachment.png';
 import iconEdit from '../../../static/icon/icon_edit.png';
+import iconAvatar from '../../../static/icon/icon_person.png';
 
 Handlebars.registerPartial('chatsPage', tpl);
 
@@ -18,7 +19,8 @@ const content = {
     iconMore,
     iconSend,
     iconAttachment,
-    iconEdit
+    iconEdit,
+    iconAvatar
 }
 
 document.getElementById('chatsPage').innerHTML = tpl(content);
