@@ -1,0 +1,44 @@
+@import '../../consts/base'
+
+.cont
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+.avatar
+    border-radius: 100%
+    background-color: grey
+    height: 46px
+    width: 46px
+    box-sizing: border-box
+
+    & > img
+        width: 100%
+
+.name
+    margin: 0
+    font-family: $second-font
+    font-size: 16px
+    color: #fff
+    font-style: normal
+    
+.main
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    padding-left: 25px
+    width: calc(100% - 50px - 46px)
+    box-sizing: border-box
+
+.description
+    color: #7250FF
+    font-family: $second-font
+    font-weight: 400
+    font-size: 16px
+
+.time
+    float: right
+    font-family: $second-font
+    color: #fff
+    width: 50px
+    box-sizing: border-box
