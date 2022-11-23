@@ -30,6 +30,11 @@
         </div>
         <div class={{styles.horizontalLine}}></div>
         <div class={{styles.chat}}>
+            {{#each userChats}}
+                {{{this}}}
+            {{/each}}
+        </div>
+        {{!-- <div class={{styles.chat}}>
             {{> userChat id='chat_2' avatar="{{iconAvatar}}" userName="Асафьев Стас" description="Привет Котик!.." time="10:41" styles=chatStyles }}
         </div>
         <div class={{styles.horizontalLine}}></div>
@@ -40,7 +45,7 @@
         <div class={{styles.chat}}>
             {{> userChat id='chat_2' avatar="{{iconAvatar}}" userName="Новости Верхний Ларс" description="Очередь на пропуск.." time="09:00" styles=chatStyles }}
         </div>
-        <div class={{styles.horizontalLine}}></div>        
+        <div class={{styles.horizontalLine}}></div> --}}
     </div>
     <div>
 

@@ -30,17 +30,10 @@
         </div>
         <div class={{styles.horizontalLine}}></div>
         <div class={{styles.chat}}>
-            {{> userChat id='chat_2' avatar="{{iconAvatar}}" userName="Асафьев Стас" description="Привет Котик!.." time="10:41" styles=chatStyles }}
+            {{#each userChats}}
+                {{{this}}}
+            {{/each}}
         </div>
-        <div class={{styles.horizontalLine}}></div>
-        <div class={{styles.chat}}>
-            {{> userChat id='chat_3' avatar="{{iconAvatar}}" userName="Лебедев Арсений" description="Фига ты нарисовал!.." time="10:20" styles=chatStyles }}
-        </div>
-        <div class={{styles.horizontalLine}}></div>
-        <div class={{styles.chat}}>
-            {{> userChat id='chat_2' avatar="{{iconAvatar}}" userName="Новости Верхний.." description="Очередь на пропуск.." time="09:00" styles=chatStyles }}
-        </div>
-        <div class={{styles.horizontalLine}}></div>        
     </div>
     <div class={{styles.chatPage}}>
         <div class={{styles.profileChat}}>

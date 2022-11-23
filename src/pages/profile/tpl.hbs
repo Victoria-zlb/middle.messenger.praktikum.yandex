@@ -62,11 +62,16 @@
                 </div>
             </div>
             <div class={{styles.button}}>
+                {{#each button}}
+                    {{{this}}}
+                {{/each}}
+            </div>
+            {{!-- <div class={{styles.button}}>
                 {{> button id='changeBtn' value='Изменить пароль' }}
             </div>
             <div class={{styles.button}}>
                 {{> button id='logoutBtn' value='Выйти' }}
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
