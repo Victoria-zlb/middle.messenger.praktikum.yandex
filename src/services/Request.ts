@@ -47,7 +47,7 @@ export default class Request {
 	// options:
 	// headers — obj
 	// data — obj
-	request = (url: string, options: { method: Methods, data: Record<string, string>, headers?: Record<string, string>, timeout?: number }) => {
+	request = (url: string, options: IOptions & { method: Methods }) => {
 		return new Promise((resolve, reject) => {
 			const xhr = new XMLHttpRequest();
 

@@ -7,6 +7,8 @@ import { Input } from "../../components/input";
 import { SerializeForm } from "../../services/SerializaForm";
 import { validateForm } from "../../consts/utils";
 
+interface abstract {}
+
 const inputsClass = "registrationInput";
 
 const inputs = [
@@ -66,7 +68,7 @@ const button = new Button({
 });
 
 class registrationPage extends Block {
-	constructor(props: object) {
+	constructor(props: abstract) {
 		super("main", {
 			...props, styles, inputs, button
 		});

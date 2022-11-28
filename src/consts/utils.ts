@@ -21,7 +21,7 @@ export const validate = (
 	const checkEmail = (value: string) => /^[\w-]+@([\w-]+\.)+[\w-]+$/.test(value);
 	const checkLogin = (value: string) => /^[A-Za-z][\w\-_]{2,19}$/.test(value);
 	const checkPassword = (value: string) => /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,40}$/.test(value);
-	const checkTel = (value: string) => /^((8|\+7)[ ]?)?(\(?\d{3}\)?[ ]?)?[\d\- ]{7,10}[^a-zA-Z0-9]$/.test(value);
+	const checkTel = (value: string) => /^((8|\+7)[ ]?)?(\(?\d{3}\)?[ ]?)?[\d\- ]{7,10}[^a-zA-Z]$/.test(value);
 	const checkName = (value: string) => /^[А-Я][а-яА-Я]{1,30}$/u.test(value);
 
 	if(type === "text") {

@@ -3,8 +3,10 @@ import * as styles from "./style.module.sass";
 import Block from "../../services/Block";
 import { render } from "../../services/RenderDom";
 
+interface abstract {}
+
 class Page404 extends Block {
-	constructor(props: object) {
+	constructor(props: abstract) {
 		const data = {
 			errorMessage: "Не туда попали",
 			styles

@@ -7,6 +7,8 @@ import { Button } from "../../components/button";
 import { render } from "../../services/RenderDom";
 import Block from "../../services/Block";
 
+interface abstract {}
+
 const button = [
 	{
 		id: "changeBtn",
@@ -25,7 +27,7 @@ const button = [
 ].map((info) => new Button(info));
 
 class profilePage extends Block {
-	constructor(props: object) {
+	constructor(props: abstract) {
 		const data = {
 			styles,
 			iconEdit,

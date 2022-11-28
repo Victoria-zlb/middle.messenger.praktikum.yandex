@@ -8,6 +8,8 @@ import iconAvatar from "../../../static/icon/icon_person.png";
 import Block from "../../services/Block";
 import { render } from "../../services/RenderDom";
 
+interface abstract {}
+
 const userChatsInfo = [
 	{
 		iconAvatar: iconAvatar,
@@ -32,7 +34,7 @@ const userChatsInfo = [
 const userChats = userChatsInfo.map((user) => new UserChat(user));
 
 class chatsPage extends Block {
-	constructor(props: object) {
+	constructor(props: abstract) {
 		const data = {
 			styles,
 			chatStyles,
