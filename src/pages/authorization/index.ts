@@ -1,10 +1,10 @@
 import tpl from "./tpl.hbs";
 import * as styles from "./style.module.sass";
-import Button from "../../components/button";
+import { Button } from "../../components/button";
 import { render } from "../../services/RenderDom";
 import Block from "../../services/Block";
-import { SerializeForm } from "../../services/serializaForm";
-import Input from "../../components/input";
+import { SerializeForm } from "../../services/SerializaForm";
+import { Input } from "../../components/input";
 import { validateForm } from "../../consts/utils";
 
 const inputsClass = "authorizationInput";
@@ -31,12 +31,12 @@ const button = new Button({
 		click: () => {
 			console.log("Валидация формы при клике на кнопку: " + validateForm(inputsClass));
 			console.log(SerializeForm("#authorization"));
-		}
+		},
 	}
 });
 
 class authorizationPage extends Block {
-	constructor(props) {
+	constructor(props: object) {
 		super("main", {
 			...props, styles, inputs, button
 		});

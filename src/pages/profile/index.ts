@@ -3,7 +3,7 @@ import * as styles from "./style.module.sass";
 import arrow from "../../../static/icon/arrow.png";
 import iconEdit from "../../../static/icon/icon_edit.png";
 import iconAvatar from "../../../static/icon/icon_person.png";
-import Button from "../../components/button";
+import { Button } from "../../components/button";
 import { render } from "../../services/RenderDom";
 import Block from "../../services/Block";
 
@@ -25,7 +25,7 @@ const button = [
 ].map((info) => new Button(info));
 
 class profilePage extends Block {
-	constructor(props) {
+	constructor(props: object) {
 		const data = {
 			styles,
 			iconEdit,

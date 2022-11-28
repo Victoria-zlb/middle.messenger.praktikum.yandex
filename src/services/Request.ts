@@ -1,46 +1,53 @@
-enum METHODS {
+enum Methods {
     GET = "GET",
     PUT = "PUT",
     POST = "POST",
     DELETE = "DELETE"
 }
 
+interface IOptions {
+	data: Record<string, string>,
+	headers?: Record<string, string>,
+	timeout?: number
+}
+
 function queryStringify(data: Record<string, string>) {
-	const entries = Object.entries(data).map(
-		([key, val]) => (`${key}=${val}`)
+	const entries = Object.entries(data).reduce(
+		([key, val]) => (`${key}=${val}&`),
+		"?"
 	);
-	return `?${entries.join("&")}`;
+	return entries;
 }
 
 export default class Request {
-	get = (url: string, options: { data: Record<string, string>, timeout: number }) => {
+	get = (url: string, options: IOptions) => {
 		const queryUrl = options.data ? `${url}${queryStringify(options.data)}` : url;
 		console.log(queryUrl);
 		return this.request(
 			queryUrl,
-			{ ...options, method: METHODS.GET }
+			{ ...options, method: Methods.GET }
 		);
 	};
 
-	put = (url: string, options: { data: Record<string, string>, timeout: number }) => this.request(
+	put = (url: string, options: IOptions) => this.request(
 		url,
-		{ ...options, method: METHODS.PUT }
+		{ ...options, method: Methods.PUT }
 	);
 
-	post = (url: string, options: { data: Record<string, string>, timeout: number }) => this.request(
+	post = (url: string, options: IOptions) => this.request(
 		url,
-		{ ...options, method: METHODS.POST }
+		{ ...options, method: Methods.POST }
 	);
 
-	delete = (url: string, options: { data: Record<string, string>, timeout: number }) => this.request(
+	delete = (url: string, options: IOptions) => this.request(
 		url,
-		{ ...options, method: METHODS.DELETE }
+		{ ...options, method: Methods.DELETE }
 	);
 
 	// options:
 	// headers — obj
 	// data — obj
-	request = (url: string, options: { method: METHODS, data: Record<string, string>, headers?: Record<string, string>, timeout?: number }) => {
+	request = (url: string, options: { method: Methods, data: Record<string, string>, headers?: Record<string, string>, timeout?: number }) => {
 		return new Promise((resolve, reject) => {
 			const xhr = new XMLHttpRequest();
 
@@ -58,8 +65,8 @@ export default class Request {
 			xhr.timeout = options.timeout || 5000;
 			xhr.ontimeout = () => reject("Timeout occured");
 
-			if (options.method === METHODS.GET || !options.data) { xhr.send(); } else
-			// @ts-ignore // eslint-disable-line
+			if (options.method === Methods.GET || !options.data) { xhr.send(); } else
+			// @ts-ignore
 			{ xhr.send(options.data); }
 		});
 	};

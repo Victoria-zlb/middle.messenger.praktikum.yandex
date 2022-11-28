@@ -2,8 +2,9 @@
   "name": "my-project",
   "source": "",
   "scripts": {
-    "start": "parcel static/index.html --no-cache --open",
-    "build": "parcel build static/index.html && node ./static/server.js",
+    "dev": "parcel static/index.html --no-cache --open",
+    "start": "node ./static/server.js",
+    "build": "parcel build static/index.html",
     "lint:ts": "eslint --ext .ts ./",
     "lint:ts:fix": "eslint --ext .ts ./ --fix",
     "lint:scss": "npx stylelint \"**/*.sass\"",
@@ -12,22 +13,21 @@
   "devDependencies": {
     "@parcel/transformer-inline-string": "2.7.0",
     "@parcel/transformer-sass": "2.7.0",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "5.42.1",
     "@typescript-eslint/parser": "5.42.1",
-    "eslint": "^8.28.0",
+    "eslint": "8.28.0",
     "eslint-config-airbnb": "19.0.4",
-    "express": "4.18.2",
     "parcel": "2.7.0",
     "parcel-plugin-clean-easy": "1.0.2",
     "parcel-plugin-static-files-copy": "2.6.0",
     "parcel-transformer-hbs": "1.0.4",
-    "stylelint": "^14.15.0",
+    "stylelint": "14.15.0",
     "typescript": "4.8.4"
   },
   "dependencies": {
-    "eslint-config-airbnb-base": "^15.0.0",
     "handlebars": "4.7.7",
-    "stylelint-scss": "^4.3.0",
+    "express": "4.18.2",
     "uuid": "9.0.0"
   },
   "@parcel/transformer-css": {

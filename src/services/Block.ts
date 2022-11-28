@@ -88,9 +88,9 @@ export abstract class Block {
 		eventBus.emit(Block.EVENTS.INIT);
 	}
 
-	_isBlock = (prop: unknown): prop is Block => prop instanceof Block;
+	private _isBlock = (prop: unknown): prop is Block => prop instanceof Block;
 
-	_getChildren(propsAndChildren: IProps) {
+	private _getChildren(propsAndChildren: IProps) {
 		const children: IChildren<Block> = {};
 		const props: IProps = {};
 
@@ -106,14 +106,14 @@ export abstract class Block {
 		return { children, props };
 	}
 
-	_registerEvents(eventBus: EventBus): void {
+	private _registerEvents(eventBus: EventBus): void {
 		eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
 		eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
 		eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
 		eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
 	}
 
-	_createResources(): void {
+	private _createResources(): void {
 		const { tagName } = this._meta;
 		this._element = this._createDocumentElement(tagName, this._classList, this._attributes);
 	}
@@ -123,7 +123,7 @@ export abstract class Block {
 		this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
 	}
 
-	_componentDidMount(): void {
+	private _componentDidMount(): void {
 		this.componentDidMount();
 		[...Object.values(this.children)].flat().forEach((child) => {
 			child.dispatchComponentDidMount();
@@ -137,7 +137,7 @@ export abstract class Block {
 		this.eventBus().emit(Block.EVENTS.FLOW_CDM);
 	}
 
-	_componentDidUpdate(oldProps: IProps, newProps: IProps): void {
+	private _componentDidUpdate(oldProps: IProps, newProps: IProps): void {
 		if (this.componentDidUpdate(oldProps, newProps)) {
 			this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
 		}
@@ -172,7 +172,7 @@ export abstract class Block {
 		return this._element;
 	}
 
-	_addEvents() {
+	private _addEvents() {
 		const { events } = this.props;
 		if (!events) {
 			return;
@@ -186,7 +186,7 @@ export abstract class Block {
 		});
 	}
 
-	_removeEvents() {
+	private _removeEvents() {
 		const { events } = this.props;
 		if (!events) {
 			return;
@@ -229,7 +229,7 @@ export abstract class Block {
 		return fragment.content;
 	}
 
-	_render(): void {
+	private _render(): void {
 		const block = this.render();
 		this._removeEvents();
 		this._element.innerHTML = "";
@@ -249,7 +249,7 @@ export abstract class Block {
 		return this.element;
 	}
 
-	_makePropsProxy<T extends IProps>(props: T) {
+	private _makePropsProxy<T extends IProps>(props: T) {
 		const proxyDescriptor = {
 			get: (target: T, prop: string): unknown => {
 				if (prop.indexOf("_") === 0) {
@@ -284,7 +284,7 @@ export abstract class Block {
 		return new Proxy(props, proxyDescriptor);
 	}
 
-	_createDocumentElement(tagName: string, classList?: string[], attributes?: IAttributes): HTMLElement {
+	private _createDocumentElement(tagName: string, classList?: string[], attributes?: IAttributes): HTMLElement {
 		const element = document.createElement(tagName);
 		classList && element.classList.add(...classList);
 		attributes

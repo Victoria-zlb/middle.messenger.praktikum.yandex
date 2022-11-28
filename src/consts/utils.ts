@@ -14,14 +14,21 @@ export const serializeForm = (formNode: IFormNode) => {
 };
 
 export const validate = (
-	type: "email" | "login" | "password" | "tel" | "name" | "text",
-	value: string
-): boolean => {
-	const checkEmail = (value: string) => /^[\w-\.]+@([\w-]+\.)+[\w-]+$/.test(value); // eslint-disable-line
+	type: "email" | "login" | "password" | "tel" | "name" | "text" | string,
+	value: string,
+	name?: string
+): boolean | undefined => {
+	const checkEmail = (value: string) => /^[\w-]+@([\w-]+\.)+[\w-]+$/.test(value);
 	const checkLogin = (value: string) => /^[A-Za-z][\w\-_]{2,19}$/.test(value);
-	const checkPassword = (value: string) => /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,40}$/.test(value); // eslint-disable-line
-	const checkTel = (value: string) => /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,9}$/.test(value); // eslint-disable-line
-	const checkName = (value: string) => /^[А-Я][а-яА-Я\-]{1,30}$/u.test(value); // eslint-disable-line
+	const checkPassword = (value: string) => /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*#?&]{8,40}$/.test(value);
+	const checkTel = (value: string) => /^((8|\+7)[ ]?)?(\(?\d{3}\)?[ ]?)?[\d\- ]{7,10}[^a-zA-Z0-9]$/.test(value);
+	const checkName = (value: string) => /^[А-Я][а-яА-Я]{1,30}$/u.test(value);
+
+	if(type === "text") {
+		name === "login" ? type = "login" : false;
+		name === "first_name" ? type = "name" : false;
+		name === "second_name" ? type = "name" : false;
+	}
 
 	if (!value.length) return false;
 	switch (type) {

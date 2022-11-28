@@ -1,9 +1,9 @@
 import tpl from "./tpl.hbs";
 import "./style.sass";
 import Component from "../../services/Block";
-import ButtonInterfaceProps from "./buttonInterface";
+import { ButtonInterfaceProps } from "./buttonInterface";
 
-export default class Button extends Component {
+export class Button extends Component {
 	constructor(props: ButtonInterfaceProps) {
 		super("div", props);
 	}

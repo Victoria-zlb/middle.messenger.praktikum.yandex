@@ -4,7 +4,7 @@ import Block from "../../services/Block";
 import { render } from "../../services/RenderDom";
 
 class Page404 extends Block {
-	constructor(props) {
+	constructor(props: object) {
 		const data = {
 			errorMessage: "Не туда попали",
 			styles
@@ -16,5 +16,5 @@ class Page404 extends Block {
 		return this.compile(tpl, this.props);
 	}
 }
-const page404 = new Page404(null);
+const page404 = new Page404({});
 render("#Page404", page404);

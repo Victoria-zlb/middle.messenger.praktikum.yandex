@@ -3,7 +3,7 @@ import tpl from "./tpl.hbs";
 import "./style.module.sass";
 import Block from "../../services/Block";
 
-export default class UserChat extends Block {
+export class UserChat extends Block {
 	constructor(props) {
 		const data = {
 			styles

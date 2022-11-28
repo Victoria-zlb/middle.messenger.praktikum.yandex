@@ -4,7 +4,7 @@ import Block from "../../services/Block";
 import { render } from "../../services/RenderDom";
 
 class Page500 extends Block {
-	constructor(props) {
+	constructor(props: object) {
 		const data = {
 			errorMessage: "Мы уже фиксим",
 			styles
@@ -16,5 +16,5 @@ class Page500 extends Block {
 		return this.compile(tpl, this.props);
 	}
 }
-const page500 = new Page500(null);
+const page500 = new Page500({});
 render("#Page500", page500);

@@ -33,6 +33,10 @@ module.exports = {
 			"always"
 		],
 		"no-mixed-spaces-and-tabs": 0,
-		"@typescript-eslint/ban-ts-comment": "off"
+		"@typescript-eslint/ban-ts-comment": "off",
+		"eol-last": [
+			"error", 
+			"always"
+		]
 	}
 };

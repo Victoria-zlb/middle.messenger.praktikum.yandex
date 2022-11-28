@@ -1,7 +1,7 @@
 import tpl from "./tpl.hbs";
 import * as styles from "./style.module.sass";
 import * as chatStyles from "../../components/userChat/style.module.sass";
-import UserChat from "../../components/userChat";
+import { UserChat } from "../../components/userChat";
 import iconAdd from "../../../static/icon/icon_add.png";
 import iconMore from "../../../static/icon/icon_more.png";
 import iconAvatar from "../../../static/icon/icon_person.png";
@@ -32,7 +32,7 @@ const userChatsInfo = [
 const userChats = userChatsInfo.map((user) => new UserChat(user));
 
 class chatsPage extends Block {
-	constructor(props) {
+	constructor(props: object) {
 		const data = {
 			styles,
 			chatStyles,
@@ -48,5 +48,5 @@ class chatsPage extends Block {
 		return this.compile(tpl, this.props);
 	}
 }
-const chats = new chatsPage(null);
+const chats = new chatsPage({});
 render("#chatsListPage", chats);

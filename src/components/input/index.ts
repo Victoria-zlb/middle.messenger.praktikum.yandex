@@ -2,9 +2,9 @@ import tpl from "./tpl.hbs";
 import * as styles from "./style.module.sass";
 import Component from "../../services/Block";
 import { validate } from "../../consts/utils";
-import InputInterfaceProps from "./inputInterface";
+import { InputInterfaceProps } from "./inputInterface";
 
-export default class Input extends Component {
+export class Input extends Component {
 	constructor(props: InputInterfaceProps) {
 		super("label", { ...props });
 	}
@@ -15,27 +15,24 @@ export default class Input extends Component {
 
 	postRender() {
 		const parents = this._element.children;
-		// @ts-ignore
 		for (const item of parents) {
-			item.tagName === "INPUT"
-				? item.addEventListener(
-					"change",
-					() => {
-						// @ts-ignore
-						if (!validate(item.type, item.value)) {
-							// @ts-ignore
-							item.focus();
-							// @ts-ignore
-							item.style.borderBottom = "1px solid red";
-						} else {
-							// @ts-ignore
-							item.blur();
-							// @ts-ignore
-							item.style.borderBottom = "";
+			if (item instanceof HTMLInputElement) {
+				item.tagName === "INPUT"
+					? item.addEventListener(
+						"change",
+						() => {
+							if (!validate(item.type, item.value, item.name)) {
+								item.focus();
+								item.style.borderBottom = "1px solid red";
+							} else {
+								item.blur();
+								item.style.borderBottom = "";
+							}
 						}
-					}
-				)
-				: false;
+					)
+					: false;
+			}
+			
 		}
 	}
 }
