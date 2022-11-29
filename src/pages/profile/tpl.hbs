@@ -2,14 +2,14 @@
     <div class={{styles.leftPage}}>
         <div class={{styles.box}}>
             <div class={{styles.arrow}}>
-                <img src="{{arrow}}" />
+                <img src="{{arrow}}" class={{styles.arrowImage}}/>
             </div>
         </div>
     </div>
     <div class={{styles.rightPage}}>
         <div class={{styles.content}}>
             <div class={{styles.image}}>
-                <img src="{{iconAvatar}}" alt="Аватарка"/>
+                <img src="{{iconAvatar}}" alt="Аватарка" class={{styles.imageAvatar}} />
                 <div class={{styles.editImage}}>
                     <img src="{{iconEdit}}" />
                 </div>
@@ -19,53 +19,52 @@
             </div>
             <div class={{styles.info}}>
                 <div class={{styles.infoString}}>
-                    <p>Почта</p>
-                    <p>i@klyukvin.ru</p>
+                    <p class={{styles.infoStringText}}>Почта</p>
+                    <p class={{styles.infoStringText}}>i@klyukvin.ru</p>
                     <div class={{styles.edit}}>
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
                 <div class={{styles.infoString}}>
-                    <p>Логин</p>
-                    <p>klyukvin</p>
+                    <p class={{styles.infoStringText}}>Логин</p>
+                    <p class={{styles.infoStringText}}>klyukvin</p>
                     <div class={{styles.edit}}>
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
                 <div class={{styles.infoString}}>
-                    <p>Имя</p>
-                    <p>Дмитрий</p>
+                    <p class={{styles.infoStringText}}>Имя</p>
+                    <p class={{styles.infoStringText}}>Дмитрий</p>
                     <div class={{styles.edit}}>
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
                 <div class={{styles.infoString}}>
-                    <p>Фамилия</p>
-                    <p>Клюквин</p>
+                    <p class={{styles.infoStringText}}>Фамилия</p>
+                    <p class={{styles.infoStringText}}>Клюквин</p>
                     <div class={{styles.edit}}>
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
                 <div class={{styles.infoString}}>
-                    <p>Имя в чате</p>
-                    <p>rencover</p>
+                    <p class={{styles.infoStringText}}>Имя в чате</p>
+                    <p class={{styles.infoStringText}}>rencover</p>
                     <div class={{styles.edit}}>
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
                 <div class={{styles.infoString}}>
-                    <p>Телефон</p>
-                    <p>+7(999)-123-45-67</p>
+                    <p class={{styles.infoStringText}}>Телефон</p>
+                    <p class={{styles.infoStringText}}>+7(999)-123-45-67</p>
                     <div class={{styles.edit}}>
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
             </div>
             <div class={{styles.button}}>
-                {{> button id='changeBtn' value='Изменить пароль' }}
-            </div>
-            <div class={{styles.button}}>
-                {{> button id='logoutBtn' value='Выйти' }}
+                {{#each button}}
+                    {{{this}}}
+                {{/each}}
             </div>
         </div>
     </div>
