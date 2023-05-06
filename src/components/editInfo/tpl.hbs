@@ -1,0 +1,18 @@
+<div id="{{ unicId }}" data-content={{ content }} data-name={{ valueName }}>
+    {{#if isViewContent}}
+    <div class={{styles.infoString}}>
+        <p class={{styles.infoStringText}}>{{ name }}</p>
+        <p class={{styles.infoStringText}}>{{ content }}</p>
+        <div class={{styles.edit}}>
+            <img src="{{iconEdit}}" />
+        </div>
+    </div>
+    {{/if}}
+    {{#if isViewEdit}}
+    <div class={{styles.content}}>
+        <p class={{styles.text}}>{{ editName }}</p>
+        {{{ editInput }}}
+        <div class={{styles.successButton}}>{{{ successButton }}}</div>
+    </div>
+    {{/if}}
+</div>

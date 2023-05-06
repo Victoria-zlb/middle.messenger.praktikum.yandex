@@ -1,23 +1,28 @@
 <div class={{styles.container}}>
     <div class={{styles.leftPage}}>
         <div class={{styles.box}}>
-            <div class={{styles.arrow}}>
+            <div class={{styles.arrow}} id="toChats">
                 <img src="{{arrow}}" class={{styles.arrowImage}}/>
             </div>
         </div>
     </div>
     <div class={{styles.rightPage}}>
-        <div class={{styles.content}}>
+        <div class={{styles.content}} id="content">
             <div class={{styles.image}}>
                 <img src="{{iconAvatar}}" alt="Аватарка" class={{styles.imageAvatar}} />
-                <div class={{styles.editImage}}>
-                    <img src="{{iconEdit}}" />
+                <div class={{styles.editImage}} id="addAvatar">
+                    <img src="{{iconEdit}}"/>
                 </div>
             </div>
             <div class={{styles.name}}>
                 <h2>Клюквин Дмитрий</h2>
             </div>
-            <div class={{styles.info}}>
+            <div class={{styles.info}} id="userInfo">
+                {{#each editsInfo}}
+                    {{{this}}}
+                {{/each}}
+            </div>
+            {{!-- <div class={{styles.info}} id="userInfo">
                 <div class={{styles.infoString}}>
                     <p class={{styles.infoStringText}}>Почта</p>
                     <p class={{styles.infoStringText}}>i@klyukvin.ru</p>
@@ -60,6 +65,14 @@
                         <img src="{{iconEdit}}" />
                     </div>
                 </div>
+            </div> --}}
+            <div id="changePassword" class={{styles.changePassword}} style="display: none;">
+                <form id="changePasswordForm">
+                    {{#each inputs}}
+                        {{{this}}}
+                    {{/each}}
+                </form>
+                <div class={{styles.changeButton}}>{{{changePasswordButton}}}</div>
             </div>
             <div class={{styles.button}}>
                 {{#each button}}
@@ -68,4 +81,5 @@
             </div>
         </div>
     </div>
+    {{{ editInfo }}}
 </div>

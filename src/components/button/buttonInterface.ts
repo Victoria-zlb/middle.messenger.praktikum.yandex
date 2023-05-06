@@ -3,5 +3,6 @@ export interface ButtonInterfaceProps {
     id: string | number,
     events: {
         click: () => void
-    }
+    },
+    className?: string;
 }

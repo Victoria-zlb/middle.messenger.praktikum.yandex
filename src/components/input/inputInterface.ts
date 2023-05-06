@@ -1,7 +1,6 @@
 export interface InputInterfaceProps {
-    label: string,
+    label?: string,
     type: string,
     login: string,
     className: string
 }
-

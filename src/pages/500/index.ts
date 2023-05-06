@@ -1,11 +1,12 @@
 import tpl from "./tpl.hbs";
 import * as styles from "./style.module.sass";
-import Block from "../../services/Block";
-import { render } from "../../services/RenderDom";
+import Page from "../Page";
+import { appRouter } from "../../../static";
+// import { render } from "../../services/RenderDom";
 
 interface abstract {}
 
-class Page500 extends Block {
+export class Page500 extends Page {
 	constructor(props: abstract) {
 		const data = {
 			errorMessage: "Мы уже фиксим",
@@ -17,6 +18,19 @@ class Page500 extends Block {
 	render() {
 		return this.compile(tpl, this.props);
 	}
+
+	postRender() {
+		const parents = this._element.children;
+		const pArray = parents[0].getElementsByTagName('p');
+		for(let element of pArray) {
+			if (element.id = 'toChats') {
+				element.addEventListener('click', (e) => {
+					appRouter.go('/messages');
+					e.stopPropagation();
+				});
+			}
+		}
+	}
 }
-const page500 = new Page500({});
-render("#Page500", page500);
+// const page500 = new Page500({});
+// render("#Page500", page500);

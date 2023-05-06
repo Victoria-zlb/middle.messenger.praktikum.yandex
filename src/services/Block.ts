@@ -243,6 +243,12 @@ export abstract class Block {
 		return this.compile(template, this.props);
 	}
 
+	reRender() {
+		console.log('%cРерендер', 'color: red;');
+		console.log(this.props)	
+		this._render();
+	}
+
 	postRender() {} // eslint-disable-line
 
 	getContent() {

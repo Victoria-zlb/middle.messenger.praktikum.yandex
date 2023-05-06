@@ -7,9 +7,12 @@ import iconSend from "../../../static/icon/icon_send.png";
 import iconAttachment from "../../../static/icon/icon_attachment.png";
 import iconEdit from "../../../static/icon/icon_edit.png";
 import iconAvatar from "../../../static/icon/icon_person.png";
-import Block from "../../services/Block";
-import { render } from "../../services/RenderDom";
+import Page from "../Page";
+// import { render } from "../../services/RenderDom";
 import { UserChat } from "../../components/userChat";
+import { appRouter } from "../../../static";
+import { Input } from "../../components/input";
+import { getClassName } from "../../utils/getClassName";
 
 interface abstract {}
 
@@ -38,7 +41,7 @@ const userChats = userChatsInfo.map((user) => new UserChat(user));
 
 console.log(userChats);
 
-class chatsPage extends Block {
+export class chatsPage extends Page {
 	constructor(props: abstract) {
 		const data = {
 			styles,
@@ -57,6 +60,32 @@ class chatsPage extends Block {
 	render() {
 		return this.compile(tpl, this.props);
 	}
+
+	postRender() {
+		const parents = this._element.children;
+		const pArray = parents[0].getElementsByTagName('div');
+		for(let element of pArray) {
+			if (element.id === 'toSettings') {
+				element.addEventListener('click', (e) => {
+					appRouter.go('/settings');
+					e.stopPropagation();
+				});
+			}
+			const inputsClass = getClassName(styles, 'addChatInput');
+			if (element.id === 'addChats') {
+				element.addEventListener('click', (e) => {
+					console.log('click')
+					const input = new Input({
+						label: "Название чата",
+						type: "text",
+						login: "text",
+						className: inputsClass
+					}).render();
+					element.appendChild(input);
+				})
+			}
+		}
+	}
 }
-const chats = new chatsPage({});
-render("#chatsPage", chats);
+// const chats = new chatsPage({});
+// render("#chatsPage", chats);
